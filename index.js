@@ -5,13 +5,13 @@ const server = express();
 let contactos = [];
 
 server.listen(3000, ()=>{
-    console.log("Escuchando en http://186.147.101.47:3000")
+    console.log("Escuchando en http://localhost:3000")
 });
 
 //Middleware Log {Verbo} - {ruta} - {queryStrings} - {body}
 function agregarLog(req, res, next){
     
-    console.log(`${req.method} - ${req.path} - ${req.query} - ${req.body}`);
+    console.log(`${req.method} - ${req.path} - ${JSON.stringify(req.query)} - ${JSON.stringify(req.body)}`);
     next();
 }
 
