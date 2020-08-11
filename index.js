@@ -58,8 +58,10 @@ function validarContacto(req, res, next) {
 
 
 // POST - Crear un contacto
-server.post("/contacto",validarContacto,(req, res)=>{
+server.post("/contact",validarContacto,(req, res)=>{
     contactos.push(req.body)
-    res.json('Contacto agregado!!!');   
+    res.status(200).json({
+        'message':'Contacto agregado!!!', 
+        contacto:req.body});   
 });
 
